@@ -7,6 +7,16 @@ Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà co
 function getUniqueRNumber($min, $max, $limit){
   $numContainer = [];
 
+  if($limit > ($max - $min)){
+    $limit = $max - $min +1;
+  }
+
+  if($max < $min){
+    $temp = $max;
+    $max = $min;
+    $min = $temp;
+  }
+
   while(count($numContainer) <= $limit){
     $num = rand($min, $max);
     if(!in_array($num, $numContainer )){
