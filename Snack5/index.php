@@ -9,7 +9,20 @@ $text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam animi a
 
 $paragraphs = explode('.', $text);
 
-var_dump($paragraphs)
+var_dump($paragraphs);
+
+
+
+//farei cosi se volessi stampare in pagina direttamente l'arrai gia filtrato;
+$checkedParag = [];
+for($i = 0; $i < count($paragraphs); $i++){
+  if(strlen($paragraphs[$i]) > 0){
+    $checkedParag [] = $paragraphs[$i];
+  }
+}
+
+//****** 
+
 
 ?>
 
@@ -23,19 +36,30 @@ var_dump($paragraphs)
 </head>
 <body>
 
-<h2>Testo:</h2>
+  <h2>Testo:</h2>
 
-<p><?php echo $text ?></p>
+  <p><?php echo $text ?></p>
 
-<h2>Suddivisione in paragrafi</h2>
+  <h2>Suddivisione in paragrafi</h2>
 
-<ul>
-  <?php for($i = 0; $i < count($paragraphs); $i++ ): ?>
-    <?php if(strlen($paragraphs[$i]) > 0):?>
-      <li><?php echo $paragraphs[$i]?></li>
-    <?php endif; ?>
-  <?php endfor; ?>
-</ul>
-  
+  <ul>
+    <?php for($i = 0; $i < count($paragraphs); $i++ ): ?>
+      <?php if(strlen($paragraphs[$i]) > 0):?>
+        <li><?php echo $paragraphs[$i]?></li>
+      <?php endif; ?>
+    <?php endfor; ?>
+  </ul>
+
+  <h2>Suddivisione in paragrafi con verifica precedente:</h2>
+
+      
+  <ul>
+    <?php for($i = 0; $i < count($checkedParag); $i++ ): ?>
+      
+        <li><?php echo $paragraphs[$i]?></li>
+      
+    <?php endfor; ?>
+  </ul>
+
 </body>
 </html>
