@@ -4,6 +4,24 @@
 Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
 */
 
+function getUniqueRNumber($min, $max, $limit){
+  $numContainer = [];
+
+  while(count($numContainer) <= $limit){
+    $num = rand($min, $max);
+    if(!in_array($num, $numContainer )){
+      $numContainer [] = $num;
+    }
+  }
+
+  return $numContainer;
+
+}
+
+$uniqueRNum = getUniqueRNumber(1, 30, 15);
+
+var_dump($uniqueRNum);
+
 ?>
 
 <!DOCTYPE html>
