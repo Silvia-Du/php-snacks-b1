@@ -7,7 +7,7 @@ Passare come parametri GET name, mail e age e verificare (cercando i metodi che 
 $name = $_GET['name'];
 $mail = $_GET['mail'];
 $age = $_GET['age'];
-var_dump($_GET);
+// var_dump($_GET);
 $check = true;
 $errorType = '';
 
